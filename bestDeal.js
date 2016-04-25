@@ -54,6 +54,43 @@ exports.minPrice = function(newArrAvo) {
 
 };
 
+exports.maxPrice = function(newArrAvo) {
+  var maxPrice = [];
+  var max = -Infinity;
+
+  var maxObj = {};
+
+  newArrAvo.forEach(function(obj){
+if (obj.pricePerAvo > max) {
+  max = obj.pricePerAvo;
+  maxObj = obj;
+}
+if (max === obj.pricePerAvo) {
+maxPrice.push(obj)
+}
+  })
+console.log(maxObj)
+return maxObj;
+}
+
+exports.average = function(newArrAvo) {
+
+
+
+  var total = 0;
+  console.log(newArrAvo);
+
+  newArrAvo.forEach(function(obj){
+ var allAvo = obj.pricePerAvo;
+
+     total = total + obj.pricePerAvo / newArrAvo.length;
+
+  });
+  var ave = total.toFixed(2);
+  console.log(ave)
+    return ave;
+
+}
 
 
 
